@@ -121,7 +121,7 @@ class Window(QtGui.QWidget):
     def handleButton7(self):
         print("Button7")
         os.system("killall compton")
-        os.system("compiz --replace &")
+        os.system("compiz --replace ccp &")
 
     def handleButton8(self):
         print("Button8")
