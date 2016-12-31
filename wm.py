@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 from PyQt4 import QtGui, QtCore
 
-
 import os
 import time
 import os.path
 
+#Is compton installed????
+compton="/usr/bin/compton"
+compx=os.path.isfile(compton)
 
 class Window(QtGui.QWidget):
     def __init__(self):
@@ -31,9 +33,10 @@ class Window(QtGui.QWidget):
             self.button2.clicked.connect(self.handleButton2)
             layout.addWidget(self.button2)
 
-            self.button3 = QtGui.QPushButton('Metacity + Compton', self)
-            self.button3.clicked.connect(self.handleButton3)
-            layout.addWidget(self.button3)
+            if compx:
+                self.button3 = QtGui.QPushButton('Metacity + Compton', self)
+                self.button3.clicked.connect(self.handleButton3)
+                layout.addWidget(self.button3)
 
         fname="/usr/bin/xfwm4"
         if os.path.isfile(fname):
@@ -50,9 +53,10 @@ class Window(QtGui.QWidget):
             self.button5.clicked.connect(self.handleButton5)
             layout.addWidget(self.button5)
 
-            self.button6 = QtGui.QPushButton('xfwm4 + Compton', self)
-            self.button6.clicked.connect(self.handleButton6)
-            layout.addWidget(self.button6)
+            if compx:
+                self.button6 = QtGui.QPushButton('xfwm4 + Compton', self)
+                self.button6.clicked.connect(self.handleButton6)
+                layout.addWidget(self.button6)
 
         fname="/usr/bin/compiz"
         if os.path.isfile(fname):
@@ -76,10 +80,10 @@ class Window(QtGui.QWidget):
             self.button8.clicked.connect(self.handleButton8)
             layout.addWidget(self.button8)
 
-            self.button9 = QtGui.QPushButton('openbox + Compton', self)
-            self.button9.clicked.connect(self.handleButton9)
-            #self.button9.setStyleSheet("background-color: green")
-            layout.addWidget(self.button9)
+            if compx:
+                self.button9 = QtGui.QPushButton('openbox + Compton', self)
+                self.button9.clicked.connect(self.handleButton9)
+                layout.addWidget(self.button9)
 
     def handleButton1(self):
         #Metacity no compositor
@@ -121,7 +125,7 @@ class Window(QtGui.QWidget):
     def handleButton7(self):
         print("Button7")
         os.system("killall compton")
-        os.system("compiz --replace ccp &")
+        os.system("compiz --replace &")
 
     def handleButton8(self):
         print("Button8")
