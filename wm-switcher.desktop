@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=WM Switcher
+Comment=Switch between available window managers with one click
+Exec=wm-switcher
+Icon=preferences-system-windows
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;
+StartupNotify=true
+X-XfcePluggable=false
+X-XfceHelpPage=display
