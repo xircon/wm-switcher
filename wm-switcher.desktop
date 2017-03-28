@@ -7,6 +7,6 @@ Icon=preferences-system-windows
 Terminal=false
 Type=Application
 Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;
-StartupNotify=true
+StartupNotify=false
 X-XfcePluggable=false
 X-XfceHelpPage=display
