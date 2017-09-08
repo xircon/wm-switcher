@@ -13,7 +13,7 @@ class Window(QtGui.QWidget):
     def __init__(self):
         QtGui.QWidget.__init__(self)
         layout = QtGui.QVBoxLayout(self)
-        self.setWindowTitle("WM selector")
+        self.setWindowTitle("WM Switcher")
 
         myFont = QtGui.QFont()
         myFont.setBold(True)
